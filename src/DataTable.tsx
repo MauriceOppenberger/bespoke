@@ -12,29 +12,42 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: "1rem 0 1rem 0",
     backgroundColor: "#eee",
-
   },
   
 }));
 
-const DataTable: React.FC<{ 
+const DataTable: React.FC<{
   data: Member[];
   loading: boolean;
-}> = ({ data, loading = true }) => {
-const classes = useStyles()
+  search: {
+    field: string;
+    value: string;
+  };
+}> = ({ data, search, loading = true }) => {
+  const classes = useStyles();
   const columns: GridColDef[] = [
     {
-      field: "name",
-      headerName: "Name",
-      width: 250,
+      field: "id",
+      headerName: "member ID",
+      flex: 1.5,
       sortable: true,
       filterable: true,
       align: "left",
       headerAlign: "left",
     },
     {
-      field: "id",
-      headerName: "member ID",
+      field: "name",
+      headerName: "Name",
+      width: 200,
+      sortable: true,
+      filterable: true,
+      align: "left",
+      headerAlign: "left",
+    },
+
+    {
+      field: "activies",
+      headerName: "Activies",
       flex: 1.5,
       sortable: true,
       filterable: true,
@@ -66,9 +79,7 @@ const classes = useStyles()
             <Button
               variant="contained"
               color="primary"
-              onClick={() => {
-               
-              }}
+              onClick={() => {}}
               style={{ padding: "5px 30px", minWidth: 0 }}
             >
               Remove
@@ -79,13 +90,8 @@ const classes = useStyles()
     },
   ];
 
-   
   return (
-    <Grid
-      item
-      xs={12}
-      style={{ minHeight: 600, width: "80%", margin: 'auto' }}
-    >
+    <Grid item xs={12} style={{ minHeight: 600, width: "80%", margin: "auto" }}>
       <DataGrid
         className={classes.root}
         pagination
@@ -94,6 +100,15 @@ const classes = useStyles()
         componentsProps={{
           columnMenu: { display: "none" },
         }}
+        filterModel={{
+          items: [
+            {
+              columnField: search.field,
+              operatorValue: "contains",
+              value: search.value,
+            },
+          ],
+        }}
         paginationMode="client"
         rows={data || []}
         columns={columns}
@@ -101,7 +116,6 @@ const classes = useStyles()
         disableColumnSelector
         density="comfortable"
         loading={loading}
-      
       />
     </Grid>
   );
