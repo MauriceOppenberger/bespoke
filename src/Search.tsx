@@ -18,15 +18,17 @@ import React from 'react';
      return;
    };
    return (
-     <Grid container style={{maxWidth: "900px"}}>
-     
-       <Grid alignItems="center" style={{ padding: "0", margin: "20px" }}>
+     <Grid container style={{ maxWidth: "900px" }}>
+       <Grid
+         alignItems="center"
+         style={{ padding: "0", margin: "20px", width: "100%" }}
+       >
          <Grid item xs={12} style={{ padding: "0 10px" }}>
            <TextField
              variant="outlined"
              required={false}
              placeholder="Search By Name"
-             inputProps={{ style: { textAlign: "center" } }}
+             inputProps={{ style: { textAlign: "center", width: "500px" } }}
              type="text"
              name="value"
              value={search.value}

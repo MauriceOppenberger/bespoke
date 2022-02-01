@@ -23,7 +23,8 @@ const DataTable: React.FC<{
     field: string;
     value: string;
   };
-}> = ({ data, search, loading = true }) => {
+  handleRemoveById: (id: string) => void;
+}> = ({ data, search, loading = true, handleRemoveById }) => {
   const classes = useStyles();
   const columns: GridColDef[] = [
     {
@@ -79,7 +80,10 @@ const DataTable: React.FC<{
             <Button
               variant="contained"
               color="primary"
-              onClick={() => {}}
+              onClick={() => {
+                  console.log(params.row?.id);
+                handleRemoveById(params.row?.id as string);
+              }}
               style={{ padding: "5px 30px", minWidth: 0 }}
             >
               Remove
