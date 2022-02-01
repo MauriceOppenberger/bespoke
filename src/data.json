@@ -1,0 +1,47 @@
+{
+    "members": [
+        { 
+            "id":"d7f32671-8300-42a9-b27a-9c36aac01c2e",
+            "name": "John Doe",
+            "age": 35,
+            "rating": 0,
+            "activies":["swimming", "running", "hiking"]
+        },
+        { 
+            "id":"5e4b64bb-f144-49e5-9737-04cf46b9e1da",
+            "name": "Jane Doe",
+            "age": 30,
+            "rating": 0,
+            "activies":["swimming", "biking", "dancing"]
+        },
+        { 
+            "id":"2b96f2c2-e607-4db0-884c-5c8f3c9c898b",
+            "name": "Tom Smith",
+            "age": 51,
+            "rating": 0,
+            "activies":["fitness", "reading", "hiking"]
+        },
+        { 
+            "id":"d1197113-cccb-464b-aa4b-3410f536b109",
+            "name": "Anna Thompson",
+            "age": 32,
+            "rating": 0,
+            "activies":["yoga", "writing", "reading"]
+        },
+        { 
+            "id":"832b8d9e-067f-4424-88d9-ca5f77600c0e",
+            "name": "Marry Lai",
+            "age": 35,
+            "rating": 0,
+            "activies":["cooking", "fitness", "yoga"]
+        },
+        { 
+            "id":"0476830e-b8eb-416a-a4f8-2fa658d2c5f0",
+            "name": "Andrew Phillips",
+            "age": 35,
+            "rating": 0,
+            "activies":["surfing", "skydiving", "skiing"]
+        }
+    ]
+    
+}
